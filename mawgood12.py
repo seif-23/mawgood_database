@@ -13,7 +13,7 @@ class Orders :
        self.__dict={"itemname":item_name,"amount":amount}
 
     def set_item_name(self ,item_name):
-        self.__item_name = float(item_name)
+        self.__item_name = str(item_name)
     def get_item_name(self):
         return self.__item_name
 

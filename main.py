@@ -97,6 +97,26 @@ CREATE TABLE Logs (
         
         return result[0] > 0
 
+    def check_user_run(self, username): 
+     try:
+        self.connect()
+
+        
+        user_exists = self.check_user(username)
+
+       
+        if user_exists:
+            print(f"User '{username}' exists in the database.")
+        else:
+            print(f"User '{username}' does not exist in the database.")
+        
+        return user_exists
+     finally:
+        
+        self.close()
+
+    
+
 
     def create_user(self,username,photo,user_type,pass_hash):
      try : 
